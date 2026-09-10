@@ -6,7 +6,7 @@
 
 ### OR：增加 high 寬度
 
-![GTKWave OR：EN 接手與 D5 加 D2 的輸出波形](docs/images/or-waveform.png)
+![GTKWave OR：EN 接手與 D5 加 D2 的輸出波形](img/GTKwaveform/orgatearray.png)
 
 - 初始 `sel = 10'h020`，只選 D[5]。
 - EN 在 D5 low、D2 high 時拉高，立即執行 OR；EN 之後保持 high。
@@ -16,7 +16,7 @@
 
 ### AND／reduce：縮短 high
 
-![GTKWave AND reduce：立即清除 high 與後續縮短的輸出波形](docs/images/and-reduce-waveform.png)
+![GTKWave AND reduce：立即清除 high 與後續縮短的輸出波形](img/GTKwaveform/andgatearray.png)
 
 - `mode = 1`、`controlRaiseOrReduce = 0`，初始只選 D[5]。
 - EN 在 D5、D2 都 high 時拉高，immediate 執行 `dutyForMos & ~D2`，立即清除 high。
@@ -24,6 +24,12 @@
 - 下一個完整週期起，第一段 high 為 **4 clk**，low 為 **60 clk**。
 
 此處 AND 是取交集，**不是 32 − 4 = 28 clk 的算術減法**。immediate 的 AND NOT 與接手後的 AND 也是不同運算；testbench 明確測試這個行為。
+
+## 邏輯架構
+
+![DPWM 邏輯架構：divider、選取遮罩、OR／AND、immediate 與 latch](img/Architecture/logic_architecture.png)
+
+[開啟原尺寸架構圖](img/Architecture/logic_architecture.png)可查看各模組與訊號連線。
 
 ## 模組與訊號
 
@@ -91,7 +97,8 @@ gtkwave wave_and_reduce.vcd wave_and_reduce.gtkw
 - `DPWM_modu_test.sv`：RTL。
 - `testbench.sv`、`testbench_and_reduce.sv`：OR 與 AND／reduce 測試。
 - `wave_or.gtkw`、`wave_and_reduce.gtkw`：可攜式 GTKWave 訊號配置。
-- `docs/images/`：README 使用的實際 GTKWave 截圖。
+- `img/GTKwaveform/`：README 使用的 OR／AND GTKWave 截圖。
+- `img/Architecture/`：邏輯架構圖。
 - `DPWM_modu_test.qpf`、`DPWM_modu_test.qsf`：Quartus 專案設定。
 
 模擬輸出、Quartus 編譯快取與備份檔不納入版本控制；VCD 可以用 `make test` 重建。

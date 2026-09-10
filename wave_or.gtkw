@@ -1,0 +1,22 @@
+[*] OR gate: immediate response and controller handoff
+[dumpfile] "wave.vcd"
+[savefile] "wave_or.gtkw"
+[size] 1400 850
+[pos] -1 -1
+*-20.000000 417000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+@28
+tb.clk
+tb.rst_n
+tb.EN
+tb.D5
+tb.D2
+@22
+tb.sel[9:0]
+tb.select_which_D[9:0]
+@28
+tb.dut.immediateStart_wire
+tb.raw_or
+tb.dut.adderSignal_wire
+tb.duty_ansys
+[pattern_trace] 1
+[pattern_trace] 0

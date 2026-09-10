@@ -1,0 +1,22 @@
+# Generated simulation outputs
+/build/
+/sim
+/sim.out
+*.vcd
+*.fst
+*.vvp
+
+# Quartus generated files and local session state
+/dni/
+/qdb/
+/db/
+/incremental_db/
+/output_files/
+*.qws
+*.nuiqu.tcl.history
+*.rpt
+*.summary
+
+# Local backups and original screenshot collection
+*.bak
+/GTKwaveform/

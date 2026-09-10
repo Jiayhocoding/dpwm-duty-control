@@ -1,0 +1,22 @@
+[*] AND reduce: immediate response and controller handoff
+[dumpfile] "wave_and_reduce.vcd"
+[savefile] "wave_and_reduce.gtkw"
+[size] 1400 850
+[pos] -1 -1
+*-20.000000 417000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+@28
+tb_and_reduce.clk
+tb_and_reduce.rst_n
+tb_and_reduce.EN
+tb_and_reduce.D5
+tb_and_reduce.D2
+@22
+tb_and_reduce.sel[9:0]
+tb_and_reduce.select_which_D[9:0]
+@28
+tb_and_reduce.dut.immediateStart_wire
+tb_and_reduce.raw_and
+tb_and_reduce.dut.subtractorSignal_wire
+tb_and_reduce.duty_ansys
+[pattern_trace] 1
+[pattern_trace] 0
